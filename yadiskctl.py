@@ -72,14 +72,14 @@ def get_token() -> str:
             token = f.read().split("\n")[0]
     return token
 
-
-def main() -> int:
+def get_disk() -> yandex.YandexDisk:
     load_dotenv_to_environ()
     token = get_token()
+    return yandex.YandexDisk(token)
 
-    disk = yandex.YandexDisk(token)
-    info = disk.get_disk_info()
-    print(info)
+def main() -> int:
+
+    disk = get_disk()
 
     return 0
 
