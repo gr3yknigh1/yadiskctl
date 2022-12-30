@@ -1,7 +1,7 @@
 from __future__ import annotations
 import os.path
 import setuptools
-import yadisk
+import yadiskctl
 
 
 def get_file_lines(file_path: str) -> list[str]:
@@ -14,16 +14,16 @@ def get_file_lines(file_path: str) -> list[str]:
 
 setuptools.setup(
     name="yadisk",
-    version=yadisk.__version__,
+    version=yadiskctl.__version__,
 
     author="Akkuzin Ilya",
     author_email="gr3yknigh1@gmail.com",
-    url="https://github.com/gr3yknigh1/yadisk",
+    url="https://github.com/gr3yknigh1/yadiskctl",
 
-    py_modules=["yadisk"],
+    py_modules=["yadiskctl"],
 
     entry_points={
-        "console_scripts": ["yadisk = yadisk:main"]
+        "console_scripts": ["yadiskctl = yadiskctl:main"]
     },
 
     install_requires=get_file_lines("./requirements.txt"),
