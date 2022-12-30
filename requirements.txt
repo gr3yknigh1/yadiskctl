@@ -1,2 +1,2 @@
-git+https://github.com/gr3yknigh1/yandex-api#egg=yadisk_api
+yandex-api
 requests

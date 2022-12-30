@@ -9,6 +9,8 @@ import webbrowser
 
 import yandex
 
+__version__ = "0.1"
+
 HOME_PATH = os.path.expanduser("~")
 STATE_PATH = os.path.join(HOME_PATH, ".local", "state", "yadisk")
 KEY_PATH = os.path.join(STATE_PATH, "oauth_code")
