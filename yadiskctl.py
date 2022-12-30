@@ -9,12 +9,15 @@ import webbrowser
 
 import yandex
 
+
 __version__ = "0.1"
+
 
 HOME_PATH = os.path.expanduser("~")
 STATE_PATH = os.path.join(HOME_PATH, ".local", "state", "yadisk")
 KEY_PATH = os.path.join(STATE_PATH, "oauth_code")
 TOKEN_PATH = os.path.join(STATE_PATH, "token")
+
 if not os.path.exists(STATE_PATH):
     os.makedirs(STATE_PATH)
 
@@ -27,6 +30,7 @@ def get_dotenv(dotenv_path: str = ".env") -> dict[str, Any]:
             name, value = line.split("=")
             env[name] = value
     return env
+
 
 def load_dotenv_to_environ(dotenv_path: str = ".env") -> None:
     os.environ.update(get_dotenv(dotenv_path))
@@ -72,10 +76,12 @@ def get_token() -> str:
             token = f.read().split("\n")[0]
     return token
 
+
 def get_disk() -> yandex.YandexDisk:
     load_dotenv_to_environ()
     token = get_token()
     return yandex.YandexDisk(token)
+
 
 def main() -> int:
 
